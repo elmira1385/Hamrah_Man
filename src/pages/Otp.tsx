@@ -3,7 +3,9 @@ import { useTranslation } from "react-i18next";
 import svg from "../image/dark-logo.svg";
 import { useForm } from "react-hook-form";
 import Button2 from "../components/Button2";
+import { useNavigate } from "react-router";
 const Otp = () => {
+ const changePage=useNavigate()
   const { t } = useTranslation();
   const { register, setFocus } = useForm({
     defaultValues: {
@@ -138,7 +140,9 @@ const Otp = () => {
             {t("otpPage.reciveCodeAgian")}
           </p>
           <button
-            onClick={() => {}}
+            onClick={() => {
+            changePage("/main")
+            }}
             className="bg-[#0095da] py-4 text-white rounded-md"
           >
             {t("otpPage.OkGo")}

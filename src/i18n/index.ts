@@ -34,6 +34,26 @@ const resources = {
         reciveCodeAgian: "دریافت مجدد کد تائید",
         OkGo:"تائید و ادامه"
       },
+      mainPage: {
+        number: "09109306236",
+        title1: "خدمات",
+        title2: "شارژ",
+        title3: "قرعه کشی",
+        title4: "اینترنت",
+        chart1: "مکالمه",
+        chart2: "اینترنت",
+        chart3: "پیامک",
+        thereIsNo: "بسته  ندارید",
+        thereIs: "بسته  دارید",
+        lastChar:"باقی مانده ی شارژ",
+        uniqueV:"ریال",
+        buycharch:"خرید شارژ",
+        becomeAlways:"تبدیل به دائمی",
+        offer:"پیشنهاد",
+        admire:"تشویق",
+        
+       
+      },
     },
   },
 };

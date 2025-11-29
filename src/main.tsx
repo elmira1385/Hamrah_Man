@@ -7,6 +7,7 @@ import "./index.css"
 import "./Fonts/Webfonts/fontiran.css"
 import './i18n';
 import  Otp from "./pages/Otp";
+import  Main from "./pages/Main";
 
 
 const router = createBrowserRouter([
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/otp",
     element: <Otp/>,
+  },
+  {
+    path: "/main",
+    element: <Main/>,
   },
  
 ]);
