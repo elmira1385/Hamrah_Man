@@ -51,7 +51,10 @@ const resources = {
         becomeAlways:"تبدیل به دائمی",
         offer:"پیشنهاد",
         admire:"تشویق",
-        
+        home:"خانه",
+        packages:"بسته‌ها",
+        work:"خدمات",
+        parse:"کیف‌ پول"
        
       },
     },

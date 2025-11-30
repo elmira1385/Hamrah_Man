@@ -6,6 +6,7 @@ import png1 from "../image/1.jpg";
 import png2 from "../image/2.jpg";
 import png3 from "../image/3.jpg";
 import png4 from "../image/4.jpg";
+import NavarBotton from "../components/NavarBotton";
 
 const Main = () => {
   const { t } = useTranslation();
@@ -531,6 +532,7 @@ const Main = () => {
           </p>
         </div>
       </div>
+      <NavarBotton/>
     </div>
   );
 };
