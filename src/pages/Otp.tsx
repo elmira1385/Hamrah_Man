@@ -4,10 +4,11 @@ import svg from "../image/dark-logo.svg";
 import { useForm } from "react-hook-form";
 import Button2 from "../components/Button2";
 import { useNavigate } from "react-router";
+
 const Otp = () => {
- const changePage=useNavigate()
+  const changePage = useNavigate();
   const { t } = useTranslation();
-  const { register, setFocus } = useForm({
+  const { register, setFocus,watch } = useForm({
     defaultValues: {
       phoneNumber1: "",
       phoneNumber2: "",
@@ -19,6 +20,23 @@ const Otp = () => {
   useEffect(() => {
     setFocus("phoneNumber1");
   });
+  useEffect(() => {
+    if(watch("phoneNumber1").length===1){
+      setFocus("phoneNumber2")
+    }
+    if(watch("phoneNumber2").length===1){
+      setFocus("phoneNumber3")
+    }
+    if(watch("phoneNumber3").length===1){
+      setFocus("phoneNumber4")
+    }
+    if(watch("phoneNumber4").length===1){
+      setFocus("phoneNumber5")
+    }
+    if(watch("phoneNumber5").length===1){
+      changePage("/main");
+    }
+  },[watch()]);
   return (
     <div className="flex flex-col bg-[#0095da] w-full h-full pt-40 ">
       <div className="flex flex-col  bg-white justify-between relative px-5 py-8 rounded-t-2xl h-full">
@@ -33,7 +51,7 @@ const Otp = () => {
               fill="none"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
-              fit=""
+              
               height="20"
               width="20"
               preserveAspectRatio="xMidYMid meet"
@@ -66,41 +84,51 @@ const Otp = () => {
             <p className="text-[#1f2937] text-[14px]">
               {t("otpPage.sendACodeToThisNumber")}
             </p>
-            <div className="flex justify-between">
-              <input
+            <div dir="ltr" className="flex justify-between ">
+              <input 
                 className="w-16 p-2 flex justify-center items-center border border-gray-300 rounded-md"
                 {...register("phoneNumber1", {
                   required: true,
                 })}
-                type="number"
+                type="text"
+                max={1}
+                maxLength={1}
               />
               <input
                 className="w-16 p-2 flex justify-center items-center border border-gray-300 rounded-md"
                 {...register("phoneNumber2", {
                   required: true,
                 })}
-                type="number"
+                type="text"
+                max={1}
+                maxLength={1}
               />
               <input
                 className="w-16 p-2 flex justify-center items-center border border-gray-300 rounded-md"
                 {...register("phoneNumber3", {
                   required: true,
                 })}
-                type="number"
+                type="text"
+                max={1}
+                maxLength={1}
               />
               <input
                 className="w-16 p-2 flex justify-center items-center border border-gray-300 rounded-md"
                 {...register("phoneNumber4", {
                   required: true,
                 })}
-                type="number"
+                type="text"
+                max={1}
+                maxLength={1}
               />
               <input
                 className="w-16 p-2 flex justify-center items-center border border-gray-300 rounded-md"
                 {...register("phoneNumber5", {
                   required: true,
                 })}
-                type="number"
+                type="text"
+                max={1}
+                maxLength={1}
               />
             </div>
           </div>
@@ -141,7 +169,7 @@ const Otp = () => {
           </p>
           <button
             onClick={() => {
-            changePage("/main")
+              changePage("/main");
             }}
             className="bg-[#0095da] py-4 text-white rounded-md"
           >
