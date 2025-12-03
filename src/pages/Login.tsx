@@ -16,7 +16,7 @@ const Login = () => {
     mode: "onChange",
     defaultValues: {
       phoneNumber: "",
-      mane: "",
+      
     },
   });
   return (

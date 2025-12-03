@@ -1,20 +1,22 @@
 import clsx from "clsx";
-import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useActiveMain } from "../store/activeMain";
+import { useNavigate } from "react-router";
+
 const NavarBotton = () => {
-  const [active, setActive] = useState<
-    "home" | "char" | "packages" | "work" | "parse"
-  >("home");
+  const { activeMain, setActiveMain } = useActiveMain();
   const { t } = useTranslation();
+  const changePage=useNavigate()
   return (
     <div className="p-2 flex items-center justify-between bg-white fixed bottom-0 right-0 left-0">
       <div
         onClick={() => {
-          setActive("home");
+          setActiveMain("home");
+          changePage("/main")
         }}
         className={clsx(
           "flex flex-col justify-center gap-2 items-center py-2.5 px-5 rounded-lg",
-          active === "home" ? "bg-gray-100" : "bg-white"
+          activeMain === "home" ? "bg-gray-100" : "bg-white"
         )}
       >
         <svg
@@ -30,7 +32,7 @@ const NavarBotton = () => {
           <defs></defs>
           <path
             className={clsx(
-              active === "home" ? "stroke-blue-400" : "stroke-[#808080]"
+              activeMain === "home" ? "stroke-blue-400" : "stroke-[#808080]"
             )}
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -39,7 +41,7 @@ const NavarBotton = () => {
           ></path>
           <path
             className={clsx(
-              active === "home" ? "stroke-blue-400" : "stroke-[#808080]"
+              activeMain === "home" ? "stroke-blue-400" : "stroke-[#808080]"
             )}
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -48,7 +50,7 @@ const NavarBotton = () => {
           ></path>
           <path
             className={clsx(
-              active === "home" ? "stroke-[#ff4f00]" : "stroke-[#808080]"
+              activeMain === "home" ? "stroke-[#ff4f00]" : "stroke-[#808080]"
             )}
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -59,7 +61,7 @@ const NavarBotton = () => {
         <p
           className={clsx(
             "text-[12px]",
-            active === "home" ? "text-blue-400" : "text-[#808080]"
+            activeMain === "home" ? "text-blue-400" : "text-[#808080]"
           )}
         >
           {t("mainPage.home")}
@@ -67,11 +69,12 @@ const NavarBotton = () => {
       </div>
       <div
         onClick={() => {
-          setActive("char");
+          setActiveMain("char");
+         changePage("/main/charge")
         }}
         className={clsx(
           "flex flex-col justify-center gap-2 items-center py-2.5 px-5 rounded-lg",
-          active === "char" ? "bg-gray-200" : "bg-white"
+          activeMain === "char" ? "bg-gray-200" : "bg-white"
         )}
       >
         <svg
@@ -87,7 +90,7 @@ const NavarBotton = () => {
           <defs></defs>
           <path
             className={clsx(
-              active === "char" ? "stroke-blue-400" : "stroke-[#808080]"
+              activeMain === "char" ? "stroke-blue-400" : "stroke-[#808080]"
             )}
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -96,13 +99,13 @@ const NavarBotton = () => {
           ></path>
           <path
             className={clsx(
-              active === "char" ? "fill-[#ff4f00]" : "fill-[#808080]"
+              activeMain === "char" ? "fill-[#ff4f00]" : "fill-[#808080]"
             )}
             d="M6 11.29l-.554-.506a.75.75 0 00.026 1.038L6 11.289zm6.748-2.217a.75.75 0 00-1.5 0h1.5zm-1.5 1.026a.75.75 0 001.5 0h-1.5zm5.3 1.57a.75.75 0 001.055 1.067l-1.054-1.067zM6.393 12.735a.75.75 0 101.056-1.065l-1.056 1.065zM18 11.289l.527.534a.75.75 0 00.028-1.038l-.555.504zm-11.446.505c1.364-1.497 3.3-2.427 5.444-2.427v-1.5c-2.59 0-4.92 1.126-6.552 2.917l1.108 1.01zm4.694-2.72v1.025h1.5V9.073h-1.5zm.75.293c2.147 0 4.084.928 5.447 2.427l1.11-1.01c-1.633-1.794-3.966-2.917-6.557-2.917v1.5zm5.475 1.389l-.924.913 1.054 1.067.924-.913-1.054-1.067zm-10.025.914l-.92-.913-1.056 1.065.92.913 1.056-1.065z"
           ></path>
           <path
             className={clsx(
-              active === "char" ? "stroke-blue-400" : "stroke-[#808080]"
+              activeMain === "char" ? "stroke-blue-400" : "stroke-[#808080]"
             )}
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -113,7 +116,7 @@ const NavarBotton = () => {
         <p
           className={clsx(
             "text-[12px]",
-            active === "char" ? "text-blue-400" : "text-[#808080]"
+            activeMain === "char" ? "text-blue-400" : "text-[#808080]"
           )}
         >
           {t("mainPage.title2")}
@@ -121,11 +124,12 @@ const NavarBotton = () => {
       </div>
       <div
         onClick={() => {
-          setActive("packages");
+          setActiveMain("packages");
+          changePage("/main/internet")
         }}
         className={clsx(
           "flex flex-col justify-center gap-2 items-center py-2.5 px-3.5 rounded-lg",
-          active === "packages" ? "bg-gray-200" : "bg-white"
+          activeMain === "packages" ? "bg-gray-200" : "bg-white"
         )}
       >
         <svg
@@ -141,7 +145,9 @@ const NavarBotton = () => {
           <defs></defs>
           <path
             className={clsx(
-              active === "packages" ? "stroke-[#ff4f00]" : "stroke-[#808080]"
+              activeMain === "packages"
+                ? "stroke-[#ff4f00]"
+                : "stroke-[#808080]"
             )}
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -150,7 +156,9 @@ const NavarBotton = () => {
           ></path>
           <path
             className={clsx(
-              active === "packages" ? "stroke-[#ff4f00]" : "stroke-[#808080]"
+              activeMain === "packages"
+                ? "stroke-[#ff4f00]"
+                : "stroke-[#808080]"
             )}
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -159,7 +167,9 @@ const NavarBotton = () => {
           ></path>
           <path
             className={clsx(
-              active === "packages" ? "stroke-[#ff4f00]" : "stroke-[#808080]"
+              activeMain === "packages"
+                ? "stroke-[#ff4f00]"
+                : "stroke-[#808080]"
             )}
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -168,7 +178,7 @@ const NavarBotton = () => {
           ></path>
           <path
             className={clsx(
-              active === "packages" ? "stroke-blue-400" : "stroke-[#808080]"
+              activeMain === "packages" ? "stroke-blue-400" : "stroke-[#808080]"
             )}
             strokeLinejoin="round"
             strokeWidth="1.5"
@@ -176,7 +186,7 @@ const NavarBotton = () => {
           ></path>
           <path
             className={clsx(
-              active === "packages" ? "stroke-blue-400" : "stroke-[#808080]"
+              activeMain === "packages" ? "stroke-blue-400" : "stroke-[#808080]"
             )}
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -185,7 +195,7 @@ const NavarBotton = () => {
           ></path>
           <path
             className={clsx(
-              active === "packages" ? "stroke-blue-400" : "stroke-[#808080]"
+              activeMain === "packages" ? "stroke-blue-400" : "stroke-[#808080]"
             )}
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -194,7 +204,7 @@ const NavarBotton = () => {
           ></path>
           <path
             className={clsx(
-              active === "packages" ? "stroke-blue-400" : "stroke-[#808080]"
+              activeMain === "packages" ? "stroke-blue-400" : "stroke-[#808080]"
             )}
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -203,7 +213,7 @@ const NavarBotton = () => {
           ></path>
           <path
             className={clsx(
-              active === "packages" ? "stroke-blue-400" : "stroke-[#808080]"
+              activeMain === "packages" ? "stroke-blue-400" : "stroke-[#808080]"
             )}
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -212,7 +222,7 @@ const NavarBotton = () => {
           ></path>
           <path
             className={clsx(
-              active === "packages" ? "stroke-blue-400" : "stroke-[#808080]"
+              activeMain === "packages" ? "stroke-blue-400" : "stroke-[#808080]"
             )}
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -221,7 +231,7 @@ const NavarBotton = () => {
           ></path>
           <path
             className={clsx(
-              active === "packages" ? "stroke-blue-400" : "stroke-[#808080]"
+              activeMain === "packages" ? "stroke-blue-400" : "stroke-[#808080]"
             )}
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -232,7 +242,7 @@ const NavarBotton = () => {
         <p
           className={clsx(
             "text-[11px]",
-            active === "packages" ? "text-blue-400" : "text-[#808080]"
+            activeMain === "packages" ? "text-blue-400" : "text-[#808080]"
           )}
         >
           {t("mainPage.packages")}
@@ -240,11 +250,11 @@ const NavarBotton = () => {
       </div>
       <div
         onClick={() => {
-          setActive("work");
+          setActiveMain("work");
         }}
         className={clsx(
           "flex flex-col justify-center gap-2 items-center py-2.5 px-4 rounded-lg",
-          active === "work" ? "bg-gray-100" : "bg-white"
+          activeMain === "work" ? "bg-gray-100" : "bg-white"
         )}
       >
         <svg
@@ -260,7 +270,7 @@ const NavarBotton = () => {
           <defs></defs>
           <path
             className={clsx(
-              active === "work" ? "stroke-[#ff4f00]" : "stroke-[#808080]"
+              activeMain === "work" ? "stroke-[#ff4f00]" : "stroke-[#808080]"
             )}
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -269,7 +279,7 @@ const NavarBotton = () => {
           ></path>
           <path
             className={clsx(
-              active === "work" ? "stroke-blue-400" : "stroke-[#808080]"
+              activeMain === "work" ? "stroke-blue-400" : "stroke-[#808080]"
             )}
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -280,7 +290,7 @@ const NavarBotton = () => {
         <p
           className={clsx(
             "text-[11px]",
-            active === "work" ? "text-blue-400" : "text-[#808080]"
+            activeMain === "work" ? "text-blue-400" : "text-[#808080]"
           )}
         >
           {t("mainPage.work")}
@@ -288,11 +298,11 @@ const NavarBotton = () => {
       </div>
       <div
         onClick={() => {
-          setActive("parse");
+          setActiveMain("parse");
         }}
         className={clsx(
           "flex flex-col justify-center gap-2 items-center py-2.5 px-3 rounded-lg",
-          active === "parse" ? "bg-gray-100" : "bg-white"
+          activeMain === "parse" ? "bg-gray-100" : "bg-white"
         )}
       >
         <svg
@@ -306,40 +316,45 @@ const NavarBotton = () => {
           focusable="false"
         >
           <defs></defs>
-          <path className={clsx(
-              active === "parse" ? "stroke-[#ff4f00]" : "stroke-[#808080]"
+          <path
+            className={clsx(
+              activeMain === "parse" ? "stroke-[#ff4f00]" : "stroke-[#808080]"
             )}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="1.5"
             d="M19 6.038v-.126c0-1.527-1.147-2.804-2.672-2.867-2.866-.12-7.494-.075-11.137 1.082C3.794 4.571 3 5.953 3 7.417V10.5"
           ></path>
-          <path className={clsx(
-              active === "parse" ? "stroke-blue-400" : "stroke-[#808080]"
+          <path
+            className={clsx(
+              activeMain === "parse" ? "stroke-blue-400" : "stroke-[#808080]"
             )}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="1.5"
             d="M17.989 6.058c-4.772-.054-8.996-.102-12.773 1.2C3.812 7.74 3 9.141 3 10.626v6.372a4 4 0 004 4h11a3 3 0 003-3V9.081a3.032 3.032 0 00-3-3.023h-.011z"
           ></path>
-          <path className={clsx(
-              active === "parse" ? "stroke-blue-400" : "stroke-[#808080]"
+          <path
+            className={clsx(
+              activeMain === "parse" ? "stroke-blue-400" : "stroke-[#808080]"
             )}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="1.5"
             d="M21 11l-3.53.706A1.83 1.83 0 0016 13.5v0a1.83 1.83 0 001.47 1.794L21 16"
           ></path>
-          <path className={clsx(
-              active === "parse" ? "stroke-blue-400" : "stroke-[#808080]"
+          <path
+            className={clsx(
+              activeMain === "parse" ? "stroke-blue-400" : "stroke-[#808080]"
             )}
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="1.5"
             d="M18.608 11.478l-1.137.228a1.83 1.83 0 000 3.588l1.137.228A2 2 0 0021 13.56v-.12a2 2 0 00-2.392-1.962z"
           ></path>
-          <path className={clsx(
-              active === "parse" ? "stroke-blue-400" : "stroke-[#808080]"
+          <path
+            className={clsx(
+              activeMain === "parse" ? "stroke-blue-400" : "stroke-[#808080]"
             )}
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -350,7 +365,7 @@ const NavarBotton = () => {
         <p
           className={clsx(
             "text-[11px]",
-            active === "parse" ? "text-blue-400" : "text-[#808080]"
+            activeMain === "parse" ? "text-blue-400" : "text-[#808080]"
           )}
         >
           {t("mainPage.parse")}

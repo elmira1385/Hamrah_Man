@@ -7,6 +7,18 @@ import png2 from "../image/2.jpg";
 import png3 from "../image/3.jpg";
 import png4 from "../image/4.jpg";
 import NavarBotton from "../components/NavarBotton";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import "../css/swiper.css"
+import banner1 from "../image/s1.jpg"
+import banner2 from "../image/s2.jpg"
+import banner3 from "../image/s3.jpg"
+import banner4 from "../image/s4.jpg"
+import banner5 from "../image/s5.jpg"
+import banner6 from "../image/s6.jpg"
 
 const Main = () => {
   const { t } = useTranslation();
@@ -21,7 +33,7 @@ const Main = () => {
         },
         track: {
           strokeWidth: "100%",
-          background: "#4e4e4e",
+          background: "#000000",
         },
         dataLabels: {
           show: true,
@@ -51,7 +63,7 @@ const Main = () => {
         },
         track: {
           strokeWidth: "100%",
-          background: "#4e4e4e",
+          background: "#000000",
         },
         dataLabels: {
           show: true,
@@ -81,7 +93,7 @@ const Main = () => {
         },
         track: {
           strokeWidth: "100%",
-          background: "#4e4e4e",
+          background: "#000000",
         },
         dataLabels: {
           show: true,
@@ -531,6 +543,45 @@ const Main = () => {
             {t("mainPage.admire")}
           </p>
         </div>
+      </div>
+      <div className="flex flex-col justify-center items-center gap-3">
+        <Swiper dir="ltr"
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+          el:".button-slider"
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination]}
+        className="mySwiper "
+      >
+        <SwiperSlide className="image">
+          <img src={banner1} alt="" />
+        </SwiperSlide>
+        <SwiperSlide className="image">
+          <img src={banner2} alt="" />
+        </SwiperSlide>
+        <SwiperSlide className="image">
+          <img src={banner3} alt="" />
+        </SwiperSlide>
+        <SwiperSlide className="image">
+          <img src={banner4} alt="" />
+        </SwiperSlide>
+        <SwiperSlide className="image">
+          <img src={banner5} alt="" />
+        </SwiperSlide>
+        <SwiperSlide className="image">
+          <img src={banner6} alt="" />
+        </SwiperSlide>
+        
+       
+      </Swiper>
+      <div dir="ltr" className="button-slider text-center flex gap-2 justify-center items-center"></div>
       </div>
       <NavarBotton/>
     </div>

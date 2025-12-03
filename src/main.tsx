@@ -8,6 +8,8 @@ import "./Fonts/Webfonts/fontiran.css"
 import './i18n';
 import  Otp from "./pages/Otp";
 import  Main from "./pages/Main";
+import Charge from "./pages/Charge";
+import Internet from "./pages/Internet";
 
 
 const router = createBrowserRouter([
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
   {
     path: "/main",
     element: <Main/>,
+  },
+  {
+    path: "/main/charge",
+    element: <Charge/>,
+  },
+  {
+    path: "/main/internet",
+    element: <Internet/>,
   },
  
 ]);

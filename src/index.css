@@ -47,6 +47,7 @@ body{
     font-family:IRANYekanX,sans-serif ;
     height: 100vh;
     direction: rtl;
+	
 }
 #root{
     height: 100%;
@@ -54,3 +55,4 @@ body{
 .apexcharts-radialbar-hollow{
 	padding-bottom: 10px;
 }
+
