@@ -32,7 +32,7 @@ const Otp = () => {
     }
     if(watch("phoneNumber4").length===1){
       setFocus("phoneNumber5")
-    }
+    }                                       
     if(watch("phoneNumber5").length===1){
       changePage("/main");
     }
