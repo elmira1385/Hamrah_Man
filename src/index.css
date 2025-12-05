@@ -56,3 +56,8 @@ body{
 	padding-bottom: 10px;
 }
 
+.ss01 {
+	-moz-font-feature-settings: 'ss01';
+	-webkit-font-feature-settings: 'ss01';
+	font-feature-settings: 'ss01';
+}

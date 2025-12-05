@@ -1,12 +1,23 @@
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 import { useActiveMain } from "../store/activeMain";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
+import { useEffect } from "react";
 
 const NavarBotton = () => {
   const { activeMain, setActiveMain } = useActiveMain();
   const { t } = useTranslation();
   const changePage=useNavigate()
+  const location=useLocation()
+  useEffect(()=>{
+  if(location.pathname==="/main"){
+    setActiveMain("home")
+  }else if(location.pathname==="/main/charge"){
+    setActiveMain("char")
+  }else if(location.pathname==="/main/internet"){
+    setActiveMain("packages")
+  }
+  },[])
   return (
     <div className="p-2 flex items-center justify-between bg-white fixed bottom-0 right-0 left-0">
       <div

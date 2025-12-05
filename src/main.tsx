@@ -3,43 +3,35 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import Login from "./pages/Login";
-import "./index.css"
-import "./Fonts/Webfonts/fontiran.css"
-import './i18n';
-import  Otp from "./pages/Otp";
-import  Main from "./pages/Main";
+import "./index.css";
+import "./Fonts/Webfonts/fontiran.css";
+import "./i18n";
+import Otp from "./pages/Otp";
+import Main from "./pages/Main";
 import Charge from "./pages/Charge";
 import Internet from "./pages/Internet";
-
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login/>,
+    element: <Login />,
   },
   {
     path: "/otp",
-    element: <Otp/>,
+    element: <Otp />,
   },
   {
     path: "/main",
-    element: <Main/>,
+    children:[
+      {index:true,element:<Main/>},
+      {path:"charge",element:<Charge/>},
+      {path:"internet",element:<Internet/>}
+    ]
   },
-  {
-    path: "/main/charge",
-    element: <Charge/>,
-  },
-  {
-    path: "/main/internet",
-    element: <Internet/>,
-  },
- 
 ]);
-
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-      <RouterProvider router={router} />
+    <RouterProvider router={router} />
   </StrictMode>
 );
- 
