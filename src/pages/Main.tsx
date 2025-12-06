@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router";
+// import { useNavigate } from "react-router";
 import Chart from "react-apexcharts";
 import png1 from "../image/1.jpg";
 import png2 from "../image/2.jpg";
@@ -22,7 +22,7 @@ import banner6 from "../image/s6.jpg"
 
 const Main = () => {
   const { t } = useTranslation();
-  const options1 = {
+  const options1:ApexCharts.ApexOptions = {
     chart: {
       type: "radialBar",
     },
@@ -52,7 +52,7 @@ const Main = () => {
     },
     labels: [t("mainPage.thereIsNo")], // برچسب نمودار
   };
-  const options2 = {
+  const options2:ApexCharts.ApexOptions = {
     chart: {
       type: "radialBar",
     },
@@ -82,7 +82,7 @@ const Main = () => {
     },
     labels: [t("mainPage.thereIs")], // برچسب نمودار
   };
-  const options3 = {
+  const options3: ApexCharts.ApexOptions = {
     chart: {
       type: "radialBar",
     },
@@ -360,7 +360,7 @@ const Main = () => {
               fill="none"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
-              fit=""
+              // fit=""
               height="24"
               width="24"
               preserveAspectRatio="xMidYMid meet"
@@ -395,7 +395,7 @@ const Main = () => {
               fill="none"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
-              fit=""
+              // fit=""
               height="24"
               width="24"
               preserveAspectRatio="xMidYMid meet"
@@ -439,7 +439,7 @@ const Main = () => {
               fill="none"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
-              fit=""
+              // fit=""
               height="24"
               width="24"
               preserveAspectRatio="xMidYMid meet"
@@ -488,7 +488,7 @@ const Main = () => {
               fill="none"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
-              fit=""
+              // fit=""
               height="24"
               width="24"
               preserveAspectRatio="xMidYMid meet"

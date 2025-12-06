@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import svg from "../image/dark-logo.svg";
 import { useForm } from "react-hook-form";
@@ -139,7 +139,7 @@ const Otp = () => {
               fill="none"
               viewBox="0 0 21 20"
               xmlns="http://www.w3.org/2000/svg"
-              fit=""
+              // fit=""
               height="20"
               width="20"
               preserveAspectRatio="xMidYMid meet"

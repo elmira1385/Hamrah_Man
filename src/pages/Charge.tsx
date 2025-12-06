@@ -57,7 +57,7 @@ const Charge = () => {
               fill="none"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
-              fit=""
+              // fit=""
               height="24"
               width="24"
               preserveAspectRatio="xMidYMid meet"
