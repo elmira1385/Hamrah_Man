@@ -10,6 +10,7 @@ import Otp from "./pages/Otp";
 import Main from "./pages/Main";
 import Charge from "./pages/Charge";
 import Internet from "./pages/Internet";
+import Services from "./pages/Services";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,8 @@ const router = createBrowserRouter([
     children:[
       {index:true,element:<Main/>},
       {path:"charge",element:<Charge/>},
-      {path:"internet",element:<Internet/>}
+      {path:"internet",element:<Internet/>},
+      {path:"services",element:<Services/>}
     ]
   },
 ]);

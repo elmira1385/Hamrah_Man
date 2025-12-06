@@ -4,7 +4,7 @@ import Chart from "react-apexcharts";
 
 const InternetC = () => {
   const { t } = useTranslation();
-  const options1 = {
+  const options1:ApexCharts.ApexOptions = {
     chart: {
       type: "radialBar",
     },
@@ -34,7 +34,7 @@ const InternetC = () => {
     },
     labels: [t("mainPage.thereIs")], // برچسب نمودار
   };
-   const options2 = {
+   const options2:ApexCharts.ApexOptions = {
     chart: {
       type: "radialBar",
     },

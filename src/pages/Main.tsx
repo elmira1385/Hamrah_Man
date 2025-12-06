@@ -6,9 +6,10 @@ import png1 from "../image/1.jpg";
 import png2 from "../image/2.jpg";
 import png3 from "../image/3.jpg";
 import png4 from "../image/4.jpg";
+import png5 from "../image/5.jpg";
 import NavarBotton from "../components/NavarBotton";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination } from 'swiper/modules';
+import { Autoplay, FreeMode, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -261,47 +262,163 @@ const Main = () => {
           </svg>
         </div>
       </div>
-      <div className="flex justify-between p-3 gap-2 items-center bg-white rounded-lg">
-        <div className="flex flex-col justify-center items-center">
-          <div className="rounded-full gap-2 bg-linear-to-tr from-[#F76B1C] to-[#FAD961] p-0.75">
-            <img
-              className="h-[66px] w-[66px] rounded-full border-3 border-white object-cover"
-              src={png1}
-              alt=""
-            />
-          </div>
-          <span className="text-[13px]">{t("mainPage.title1")}</span>
-        </div>
-        <div className="flex flex-col justify-center items-center">
-          <div className="rounded-full gap-2 bg-linear-to-tr from-[#F76B1C] to-[#FAD961] p-0.75">
-            <img
-              className="h-[66px] w-[66px] rounded-full border-3 border-white object-cover"
-              src={png2}
-              alt=""
-            />
-          </div>
-          <span className="text-[13px] ">{t("mainPage.title2")}</span>
-        </div>
-        <div className="flex flex-col justify-center items-center">
-          <div className="rounded-full gap-2 bg-linear-to-tr from-[#F76B1C] to-[#FAD961] p-0.75">
-            <img
-              className="h-[66px] w-[66px] rounded-full border-3 border-white object-cover"
-              src={png3}
-              alt=""
-            />
-          </div>
-          <span className="text-[13px]">{t("mainPage.title3")}</span>
-        </div>
-        <div className="flex flex-col justify-center items-center">
-          <div className="rounded-full gap-2 bg-linear-to-tr from-[#F76B1C] to-[#FAD961] p-0.75">
-            <img
-              className="h-[66px] w-[66px] rounded-full border-3 border-white object-cover"
-              src={png4}
-              alt=""
-            />
-          </div>
-          <span className="text-[13px]">{t("mainPage.title4")}</span>
-        </div>
+      <div className="flex justify-between px-2 gap-2 items-center bg-white rounded-lg">
+        <Swiper
+            slidesPerView={4}
+            spaceBetween={10}
+            freeMode={true}
+            modules={[FreeMode, Pagination]}
+            className="mySwiper "
+          >
+            <SwiperSlide>
+              <div className="flex flex-col justify-center items-center gap-y-0.5 w-[72px] h-full  overflow-hidden ">
+                <a className="flex items-center justify-center w-[72px] h-[72px]  rounded-full bg-linear-to-tr from-[#F76B1C] to-[#FAD961]">
+                  <div className="flex items-center justify-center w-[68px]  h-[68px] md:h-[76px] bg-white rounded-full">
+                    <img
+                      className="w-[62px]  h-[62px] object-cover rounded-full"
+                      alt="اعتبار همراهی"
+                      src={png1}
+                    />
+                  </div>
+                </a>
+
+                <p className=" text-xs  font-normal text-center whitespace-nowrap">
+                  {t("mainPage.title1")}
+                </p>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="flex flex-col justify-center items-center gap-y-0.5 w-[72px] h-full overflow-hidden">
+                <a className="flex items-center justify-center w-[72px] h-[72px]  rounded-full bg-linear-to-tr from-[#F76B1C] to-[#FAD961]">
+                  <div className="flex items-center justify-center w-[68px] md:w-[76px] h-[68px] md:h-[76px] bg-white rounded-full">
+                    <img
+                      className="w-[62px] md:w-[70px] h-[62px] md:h-[70px] object-cover rounded-full"
+                      alt="آوای انتظار"
+                      src={png2}
+                    
+                    />
+                  </div>
+                </a>
+
+                <p className=" text-xs md:text-sm font-normal text-center whitespace-nowrap">
+                  {t("mainPage.title2")}
+                </p>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="flex flex-col justify-center items-center gap-y-0.5 w-[72px] h-full overflow-hidden">
+                <a className="flex items-center justify-center w-[72px] md:w-20 h-[72px] md:h-20 rounded-full bg-linear-to-tr from-[#F76B1C] to-[#FAD961]">
+                  <div className="flex items-center justify-center w-[68px] md:w-[76px] h-[68px] md:h-[76px] bg-white rounded-full">
+                    <img
+                      className="w-[62px] md:w-[70px] h-[62px] md:h-[70px] object-cover rounded-full"
+                      alt="قرعه کشی"
+                      src={png3}
+                      
+                    />
+                  </div>
+                </a>
+
+                <p className=" text-xs md:text-sm font-normal text-center whitespace-nowrap">
+                  {t("mainPage.title3")}
+                </p>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="flex flex-col justify-center items-center gap-y-0.5 w-[72px] h-full overflow-hidden">
+                <a className="flex items-center justify-center w-[72px] md:w-20 h-[72px] md:h-20 rounded-full bg-linear-to-tr from-[#F76B1C] to-[#FAD961]">
+                  <div className="flex items-center justify-center w-[68px] md:w-[76px] h-[68px] md:h-[76px] bg-white rounded-full">
+                    <img
+                      className="w-[62px] md:w-[70px] h-[62px] md:h-[70px] object-cover rounded-full"
+                      alt="اینترنت"
+                      src={png4}
+                      
+                    />
+                  </div>
+                </a>
+
+                <p className=" text-xs md:text-sm font-normal text-center whitespace-nowrap">
+                  {t("mainPage.title4")}
+                </p>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="flex flex-col justify-center items-center gap-y-0.5 w-[72px] h-full overflow-hidden">
+                <a className="flex items-center justify-center w-[72px] md:w-20 h-[72px] md:h-20 rounded-full bg-linear-to-tr from-[#F76B1C] to-[#FAD961]">
+                  <div className="flex items-center justify-center w-[68px] md:w-[76px] h-[68px] md:h-[76px] bg-white rounded-full">
+                    <img
+                      className="w-[62px] md:w-[70px] h-[62px] md:h-[70px] object-cover rounded-full"
+                      alt="خدمت در محل"
+                      src={png5}
+                      
+                    />
+                  </div>
+                </a>
+
+                <p className=" text-xs md:text-sm font-normal text-center whitespace-nowrap">
+                  {t("mainPage.title5")}
+                </p>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="flex flex-col justify-center items-center gap-y-0.5 w-[72px] h-full overflow-hidden">
+                <a className="flex items-center justify-center w-[72px] md:w-20 h-[72px] md:h-20 rounded-full bg-linear-to-tr from-[#F76B1C] to-[#FAD961]">
+                  <div className="flex items-center justify-center w-[68px] md:w-[76px] h-[68px] md:h-[76px] bg-white rounded-full">
+                    <img
+                      className="w-[62px] md:w-[70px] h-[62px] md:h-[70px] object-cover rounded-full"
+                      alt="شارژ"
+                      src={banner1}
+                    />
+                  </div>
+                </a>
+
+                <p className=" text-xs md:text-sm font-normal text-center whitespace-nowrap">
+                  {t("mainPage.title6")}
+                </p>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="flex flex-col justify-center items-center gap-y-0.5 w-[72px] h-full overflow-hidden">
+                <a className="flex items-center justify-center w-[72px] md:w-20 h-[72px] md:h-20 rounded-full bg-linear-to-tr from-[#F76B1C] to-[#FAD961]">
+                  <div className="flex items-center justify-center w-[68px] md:w-[76px] h-[68px] md:h-[76px] bg-white rounded-full">
+                    <img
+                      className="w-[62px] md:w-[70px] h-[62px] md:h-[70px] object-cover rounded-full"
+                      alt="باشگاه مشتریان"
+                      src={banner2}
+                      
+                    />
+                  </div>
+                </a>
+
+                <p className=" text-xs md:text-sm font-normal text-center whitespace-nowrap">
+                  {t("mainPage.title7")}
+                </p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="flex flex-col justify-center items-center gap-y-0.5 w-[72px] h-full overflow-hidden">
+                <a className="flex items-center justify-center w-[72px] md:w-20 h-[72px] md:h-20 rounded-full bg-linear-to-tr from-[#F76B1C] to-[#FAD961]">
+                  <div className="flex items-center justify-center w-[68px] md:w-[76px] h-[68px] md:h-[76px] bg-white rounded-full">
+                    <img
+                      className="w-[62px] md:w-[70px] h-[62px] md:h-[70px] object-cover rounded-full"
+                      alt="اوای انتظار"
+                      src={banner3}
+                      
+                    />
+                  </div>
+                </a>
+
+                <p className=" text-xs md:text-sm font-normal text-center whitespace-nowrap">
+                  {t("mainPage.title8")}
+                </p>
+              </div>
+            </SwiperSlide>
+          </Swiper>
       </div>
       <div className="flex bg-white  rounded-lg">
         <div className="flex flex-col  justify-center items-center">
