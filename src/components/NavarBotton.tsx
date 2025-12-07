@@ -18,6 +18,8 @@ const NavarBotton = () => {
     setActiveMain("packages")
   }else if(location.pathname==="/main/services"){
     setActiveMain("work")
+  }else if(location.pathname==="/main/parse"){
+    setActiveMain("parse")
   }
   },[])
   return (
@@ -313,6 +315,7 @@ const NavarBotton = () => {
       <div
         onClick={() => {
           setActiveMain("parse");
+          changePage("/main/parse")
         }}
         className={clsx(
           "flex flex-col justify-center gap-2 items-center py-2.5 px-3 rounded-lg",

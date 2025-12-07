@@ -11,6 +11,7 @@ import Main from "./pages/Main";
 import Charge from "./pages/Charge";
 import Internet from "./pages/Internet";
 import Services from "./pages/Services";
+import Parse from "./pages/Parse";
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,8 @@ const router = createBrowserRouter([
       {index:true,element:<Main/>},
       {path:"charge",element:<Charge/>},
       {path:"internet",element:<Internet/>},
-      {path:"services",element:<Services/>}
+      {path:"services",element:<Services/>},
+      {path:"parse",element:<Parse/>}
     ]
   },
 ]);

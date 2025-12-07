@@ -24,10 +24,10 @@ const Services = () => {
     | "elseService"
   >("usefulService");
   return (
-    <div className="flex flex-col gap-2">
-      <div className="flex flex-col gap-2 sticky top-0 right-0 bg-white">
+    <div className="flex flex-col  gap-2 ">
+      <div className="flex flex-col gap-2 sticky top-0 z-10 bg-white">
         <p className="font-semibold p-4">{t("servicesPage.services")}</p>
-        <div className=" px-1  rounded-lg">
+        <div className=" px-1 rounded-lg">
           <Swiper
             slidesPerView={2.5}
             spaceBetween={10}
@@ -134,7 +134,7 @@ const Services = () => {
           </Swiper>
         </div>
       </div>
-      <div className="flex flex-col bg-gray-100 p-4 gap-4  pb-40">
+      <div className="flex flex-col bg-gray-100 p-4 gap-4  pb-24">
         <div id="service1" className="flex gap-3 items-center font-semibold">
           <div className="w-2 h-2 bg-blue-400 rounded-full"></div>{" "}
           <span>{t("servicesPage.usefulService")}</span>
@@ -756,7 +756,7 @@ const Services = () => {
           id="service3"
           className="flex gap-3 items-center font-semibold pt-4"
         >
-          <div id="service1" className="w-2 h-2 bg-blue-400 rounded-full"></div>{" "}
+          <div className="w-2 h-2 bg-blue-400 rounded-full"></div>{" "}
           <span>{t("servicesPage.convertionService")}</span>
         </div>
         <div className="bg-white p-4 grid grid-cols-4  rounded-lg">
@@ -938,7 +938,7 @@ const Services = () => {
           id="service4"
           className="flex gap-3 items-center font-semibold pt-4"
         >
-          <div id="service1" className="w-2 h-2 bg-blue-400 rounded-full"></div>{" "}
+          <div className="w-2 h-2 bg-blue-400 rounded-full"></div>{" "}
           <span>{t("servicesPage.messageService")}</span>
         </div>
         <div className="bg-white p-4 grid grid-cols-4  rounded-lg">
@@ -1013,7 +1013,7 @@ const Services = () => {
           id="service5"
           className="flex gap-3 items-center font-semibold pt-4"
         >
-          <div id="service1" className="w-2 h-2 bg-blue-400 rounded-full"></div>{" "}
+          <div className="w-2 h-2 bg-blue-400 rounded-full"></div>{" "}
           <span>{t("servicesPage.digicalService")}</span>
         </div>
         <div className="bg-white p-4 grid grid-cols-4  rounded-lg">
@@ -1069,6 +1069,252 @@ const Services = () => {
             </div>
 
             <p className=" text-[10px]">{t("servicesPage.withCinama")}</p>
+          </div>
+        </div>
+        <div
+          id="service6"
+          className="flex gap-3 items-center font-semibold pt-4"
+        >
+          <div className="w-2 h-2 bg-blue-400 rounded-full"></div>{" "}
+          <span>{t("servicesPage.elseService")}</span>
+        </div>
+        <div className="bg-white p-4 grid grid-cols-4 gap-4 rounded-lg">
+          <div className="flex flex-col gap-4  items-center justify-center">
+            <div className="bg-gray-100 p-2 rounded-lg">
+              <svg
+                fill="none"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                width="24"
+                preserveAspectRatio="xMidYMid meet"
+                focusable="false"
+              >
+                <defs></defs>
+                <g strokeWidth="1.5">
+                  <g stroke="#ff4f00">
+                    <path
+                      strokeLinecap="round"
+                      d="M14.984 7.192c.51.327.846.731.966 1.164.12.433.02.876-.288 1.277-.308.402-.812.744-1.451.986a6.306 6.306 0 01-2.154.38 6.411 6.411 0 01-2.171-.344c-.651-.232-1.172-.566-1.5-.962-.33-.396-.451-.838-.353-1.272.099-.435.414-.844.908-1.18"
+                    ></path>
+                    <ellipse cx="12" cy="5.286" rx="4" ry="2.286"></ellipse>
+                  </g>
+                  <g
+                    stroke="#0095da"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M4.923 22l.761-.744a2 2 0 011.399-.57H13.6a2 2 0 001.29-.473l5.36-4.528a1.68 1.68 0 00.226-2.334v0a1.68 1.68 0 00-2.402-.226L14.2 16.433M3.5 16.5l.606-.546 1.014-.898a2 2 0 011.326-.503h6.542c.742 0 1.344.588 1.344 1.314 0 .203-.048.395-.132.566m-4.349.748h3.136c.536 0 .997-.306 1.213-.748"></path>
+                    <path d="M4.923 22l.47-.46a3 3 0 012.097-.854h5.744a3 3 0 001.936-.709l5.08-4.292a1.68 1.68 0 00.226-2.334v0a1.68 1.68 0 00-2.402-.226l-3.873 3.308m-4.35.748h3.137c.535 0 .996-.306 1.213-.748m0 0c.083-.171.13-.363.13-.566 0-.726-.601-1.315-1.343-1.315H6.826a3 3 0 00-1.99.756l-.73.646"></path>
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+            <p className="text-[10px]">{t("servicesPage.moneyService")}</p>
+          </div>
+          <div className="flex flex-col gap-4  items-center justify-center ">
+            <div className="bg-gray-100 p-2 rounded-lg">
+              <svg
+                fill="none"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                width="24"
+                preserveAspectRatio="xMidYMid meet"
+                focusable="false"
+              >
+                <defs></defs>
+                <path
+                  stroke="#ff4f00"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                  d="M8.5 6v6m2.5-1.303L6 7.303m5 3.394l-.938-.637a1 1 0 00-1.562.828m2.5-.19l-1.281-.87a1 1 0 010-1.655l1.28-.87M6 7.303l.938.637A1 1 0 008.5 7.112M6 7.303l1.281.87a1 1 0 010 1.655l-1.28.87m0 0L11 7.302m-5 3.394l.938-.637a1 1 0 011.562.828M11 7.303l-.938.637A1 1 0 018.5 7.112m0-.512v.512m0 4.288v-.512M13 18l1.5-6m-2 1.5h6m-6.5 3h6M16 18l1.5-6m-.685 2.743l-.25 1a1 1 0 01-.97.758h-.94a1 1 0 01-.97-1.243l.25-1a1 1 0 01.97-.758h.94a1 1 0 01.97 1.243z"
+                ></path>
+                <path
+                  stroke="#0095da"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                  d="M3 7a4 4 0 014-4h10a4 4 0 014 4v10a4 4 0 01-4 4H7a4 4 0 01-4-4V7z"
+                ></path>
+              </svg>
+            </div>
+
+            <p className=" text-[10px]">{t("servicesPage.orderCode")}</p>
+          </div>
+          <div className="flex flex-col gap-4  items-center justify-center ">
+            <div className="bg-gray-100 p-2 rounded-lg">
+              <svg
+                fill="none"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                width="24"
+                preserveAspectRatio="xMidYMid meet"
+                focusable="false"
+              >
+                <defs></defs>
+                <g
+                  stroke="#0095da"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                >
+                  <path d="M9 20H7.5a3 3 0 01-3-3V5a3 3 0 013-3H9l.5.5h2L12 2h1.5a3 3 0 013 3v3"></path>
+                  <path d="M16.5 8V5a3 3 0 00-3-3h-6a3 3 0 00-3 3v12a3 3 0 003 3h2"></path>
+                </g>
+                <path
+                  stroke="#ff4f00"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                  d="M12.818 18.778l2.433 2.464m-2.433-2.464a4.597 4.597 0 010-6.443 4.46 4.46 0 016.364 0 4.597 4.597 0 010 6.443m-6.364 0L16 22l3.182-3.222m0 0l-2.433 2.464m.16-4.765a1.313 1.313 0 000-1.84 1.274 1.274 0 00-1.818 0 1.313 1.313 0 000 1.84 1.274 1.274 0 001.818 0z"
+                ></path>
+              </svg>
+            </div>
+
+            <p className=" text-[10px]">{t("servicesPage.lookForPhone")}</p>
+          </div>
+          <div className="flex flex-col gap-4  items-center justify-center ">
+            <div className="bg-gray-100 p-2 rounded-lg">
+              <svg
+                fill="none"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                width="24"
+                preserveAspectRatio="xMidYMid meet"
+                focusable="false"
+              >
+                <defs></defs>
+                <path
+                  stroke="#0095da"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                  d="M8.667 14h-2A2.667 2.667 0 004 16.667V26a2.667 2.667 0 002.667 2.667H8m5.333 0H8m5.333 0h12m-12 0v-12 10m-5.333 2h3.333a2 2 0 002-2m12 2A2.667 2.667 0 0028 26V10a2.667 2.667 0 00-2.667-2.667h-2.666m2.666 21.334a2 2 0 01-2-2v-3.334m-2.666 5.334h-5.334a2 2 0 01-2-2m0 0v-9.334m10 6v4c0 .737-.597 1.334-1.333 1.334h-2.667A1.333 1.333 0 0118 27.333v-4m5.333 0c0-.736-.597-1.333-1.333-1.333h-2.667c-.736 0-1.333.597-1.333 1.333m0 0v3.334a2 2 0 01-2 2m-8-4h1.333m-1.333-4h1.333m10-4.667H22"
+                ></path>
+                <path
+                  stroke="#ff4f00"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                  d="M13.747 7.832c-.965.409-1.788.644-2.342.668-.554.025-.808-.163-.722-.534.086-.37.507-.903 1.197-1.516.69-.613 1.612-1.271 2.622-1.873 1.01-.602 2.053-1.114 2.965-1.457.913-.343 1.646-.497 2.085-.44.439.059.56.326.343.76-.216.435-.757 1.013-1.539 1.645m-.09 3.417c.628.026 1.113.13 1.409.3.296.172.392.405.279.677-.113.272-.43.575-.922.877-.492.302-1.142.595-1.885.849-.743.254-1.555.46-2.356.6-.801.14-1.564.207-2.215.196-.65-.011-1.167-.1-1.498-.26-.331-.159-.466-.382-.391-.648"
+                ></path>
+              </svg>
+            </div>
+
+            <p className=" text-[10px]">{t("servicesPage.serviceOffice")}</p>
+          </div>
+          <div className="flex flex-col gap-4  items-center justify-center ">
+            <div className="bg-gray-100 p-2 rounded-lg">
+              <svg
+                fill="none"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                width="24"
+                preserveAspectRatio="xMidYMid meet"
+                focusable="false"
+              >
+                <defs></defs>
+                <g strokeWidth="1.5">
+                  <g stroke="#ff4f00" strokeLinecap="round">
+                    <path d="M17.184 15.022A6 6 0 106.81 15.01M18.702 18.007A9 9 0 105.292 18"></path>
+                  </g>
+                  <g stroke="#0095da">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13 14l.844 1.969M11 14l-.844 1.969m0 0L16 21l-2.156-5.031m-3.688 0L8 21l5.844-5.031"
+                    ></path>
+                    <circle cx="12" cy="12" r="2"></circle>
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+            <p className=" text-[10px]">{t("servicesPage.coverInternet")}</p>
+          </div>
+          <div className="flex flex-col gap-4  items-center justify-center ">
+            <div className="bg-gray-100 p-2 rounded-lg">
+              <svg
+                fill="none"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                width="24"
+                preserveAspectRatio="xMidYMid meet"
+                focusable="false"
+              >
+                <defs></defs>
+                <path
+                  stroke="#0095da"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                  d="M4.5 11l.688 4.13A1.605 1.605 0 013.605 17v0A1.605 1.605 0 012 15.395v-3.193c0-1.29 1.492-2.008 2.5-1.202v0zm0 0c0-4.49 2.575-8 7.5-8s7.5 3.51 7.5 8m0 0l-.689 4.13A1.605 1.605 0 0020.395 17v0C21.28 17 22 16.281 22 15.395v-3.193c0-1.29-1.492-2.008-2.5-1.202v0z"
+                ></path>
+                <path
+                  stroke="#0095da"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                  d="M2 12.202c0-.51.232-.929.575-1.201.657-.522 1.958-1.247 2.122-2.07C5.383 5.478 7.863 3 12 3c4.137 0 6.616 2.477 7.303 5.932.164.822 1.465 1.547 2.122 2.069.343.272.575.692.575 1.2"
+                ></path>
+                <path
+                  fill="#ff4f00"
+                  d="M5.886 19.062a.75.75 0 00-1.217.876l1.217-.876zM11 20.75h2v-1.5h-2v1.5zm-1 0c-2.1 0-3.425-.73-4.114-1.688l-1.217.876c1.04 1.445 2.88 2.312 5.33 2.312v-1.5zm2 1.5c-.69 0-1.25-.56-1.25-1.25h-1.5A2.75 2.75 0 0012 23.75v-1.5zM13.25 21c0 .69-.56 1.25-1.25 1.25v1.5A2.75 2.75 0 0014.75 21h-1.5zm-.25-.25a.25.25 0 01.25.25h1.5A1.75 1.75 0 0013 19.25v1.5zm-2-1.5A1.75 1.75 0 009.25 21h1.5a.25.25 0 01.25-.25v-1.5z"
+                ></path>
+                <path
+                  stroke="#ff4f00"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                  d="M5.277 19.5c.692.961 1.843 1.665 3.441 1.907.084.013.166.032.245.057.975.309 1.808 1.404 2.824 1.513L12 23M10 10.1c0-1.16.895-2.1 2-2.1s2 .94 2 2.1c0 .714-.759 1.345-1.341 1.724-.388.253-.659.69-.659 1.176M12 15.9v.1"
+                ></path>
+              </svg>
+            </div>
+
+            <p className=" text-[10px]">{t("servicesPage.backUp")}</p>
+          </div>
+          <div className="flex flex-col gap-4  items-center justify-center ">
+            <div className="bg-gray-100 p-2 rounded-lg">
+              <svg
+                fill="none"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+                
+                height="24"
+                width="24"
+                preserveAspectRatio="xMidYMid meet"
+                focusable="false"
+              >
+                <defs></defs>
+                <g
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                  clipPath="url('/panel/services#izclip0_11699_163525')"
+                >
+                  <path
+                    stroke="#0095da"
+                    d="M24.485 25.152a12 12 0 10-16.97 0M20 12.667l-4 4M16 4.667v1.5m8.485 2.014l-1.06 1.061m-14.85 0l-1.06-1.06M5.5 16.666H4m24 0h-1.5M7.515 25.15l1.06-1.06m14.85 0l1.06 1.06"
+                  ></path>
+                  <path
+                    stroke="#ff4f00"
+                    d="M19.771 24.895a5.334 5.334 0 00-7.542 0M17.886 26.781a2.667 2.667 0 00-3.771 0M17.886 26.781a2.667 2.667 0 00-3.771 0M16 28.667v.083"
+                  ></path>
+                </g>
+                <defs>
+                  <clipPath id="izclip0_11699_163525">
+                    <path fill="#fff" d="M0 0h32v32H0z"></path>
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+
+            <p className=" text-[10px]">{t("servicesPage.speed")}</p>
           </div>
         </div>
         <NavarBotton />
