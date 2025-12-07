@@ -132,6 +132,13 @@ const resources = {
         checkUsim:"استعلام یوسیم",
         takeCareOfLine:"حفظ خط اعتباری",
         bomino:"بومینو",
+        voiceMail:"پیامگیر صوتی",
+        convertionLimitation:"محدودیت مکالمه",
+        convertionLimitationNatinal:"محدودیت مکالمه بین المللی",
+        aLotOfMessage:"پیامک انبوه",
+        callsUnsucces:"اعلام تماس های ناموفق",
+        onlineMarket:"فروشگاه آنلاین",
+        
       },
     },
   },

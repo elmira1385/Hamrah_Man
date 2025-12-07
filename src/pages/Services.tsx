@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "../css/swiper.css";
@@ -11,9 +11,18 @@ import png3 from "../image/bservice3.jpg";
 import png4 from "../image/bservice4.jpg";
 import png5 from "../image/bfull.png";
 import NavarBotton from "../components/NavarBotton";
+import { motion } from "framer-motion";
+import clsx from "clsx";
 const Services = () => {
   const { t } = useTranslation();
-
+  const [activeNvarService, setActiveNvarService] = useState<
+    | "usefulService"
+    | "simcardService"
+    | "convertionService"
+    | "messageService"
+    | "digicalService"
+    | "elseService"
+  >("usefulService");
   return (
     <div className="flex flex-col gap-2">
       <div className="flex flex-col gap-2 sticky top-0 right-0 bg-white">
@@ -28,48 +37,96 @@ const Services = () => {
           >
             <SwiperSlide>
               <a
-                className="border border-gray-300 rounded-full p-2 "
                 href="#service1"
+                onClick={() => {
+                  setActiveNvarService("usefulService");
+                }}
+                className={clsx(
+                  "border  rounded-full p-2 ",
+                  activeNvarService === "usefulService"
+                    ? "bg-blue-100 border border-blue-400"
+                    : "bg-white border border-gray-300"
+                )}
               >
                 {t("servicesPage.usefulService")}
               </a>
             </SwiperSlide>
             <SwiperSlide>
               <a
-                className="border border-gray-300 rounded-full p-2 "
                 href="#service2"
+                onClick={() => {
+                  setActiveNvarService("simcardService");
+                }}
+                className={clsx(
+                  "  rounded-full p-2 ",
+                  activeNvarService === "simcardService"
+                    ? "bg-blue-100 border border-blue-400"
+                    : "bg-white border border-gray-300"
+                )}
               >
                 {t("servicesPage.simcardService")}
               </a>
             </SwiperSlide>
             <SwiperSlide>
               <a
-                className="border border-gray-300 rounded-full p-2 "
                 href="#service3"
+                onClick={() => {
+                  setActiveNvarService("convertionService");
+                }}
+                className={clsx(
+                  "  rounded-full p-2 ",
+                  activeNvarService === "convertionService"
+                    ? "bg-blue-100 border border-blue-400"
+                    : "bg-white border border-gray-300"
+                )}
               >
                 {t("servicesPage.convertionService")}
               </a>
             </SwiperSlide>
             <SwiperSlide>
               <a
-                className="border border-gray-300 rounded-full p-2 "
                 href="#service4"
+                onClick={() => {
+                  setActiveNvarService("messageService");
+                }}
+                className={clsx(
+                  "  rounded-full p-2 ",
+                  activeNvarService === "messageService"
+                    ? "bg-blue-100 border border-blue-400"
+                    : "bg-white border border-gray-300"
+                )}
               >
                 {t("servicesPage.messageService")}
               </a>
             </SwiperSlide>
             <SwiperSlide>
               <a
-                className="border border-gray-300 rounded-full p-2 "
                 href="#service5"
+                onClick={() => {
+                  setActiveNvarService("digicalService");
+                }}
+                className={clsx(
+                  "  rounded-full p-2 ",
+                  activeNvarService === "digicalService"
+                    ? "bg-blue-100 border border-blue-400"
+                    : "bg-white border border-gray-300"
+                )}
               >
                 {t("servicesPage.digicalService")}
               </a>
             </SwiperSlide>
             <SwiperSlide>
               <a
-                className="border border-gray-300 rounded-full p-2 "
                 href="#service6"
+                onClick={() => {
+                  setActiveNvarService("elseService");
+                }}
+                className={clsx(
+                  "  rounded-full p-2 ",
+                  activeNvarService === "elseService"
+                    ? "bg-blue-100 border border-blue-400"
+                    : "bg-white border border-gray-300"
+                )}
               >
                 {t("servicesPage.elseService")}
               </a>
@@ -78,8 +135,8 @@ const Services = () => {
         </div>
       </div>
       <div className="flex flex-col bg-gray-100 p-4 gap-4  pb-40">
-        <div className="flex gap-3 items-center font-semibold">
-          <div id="service1" className="w-2 h-2 bg-blue-400 rounded-full"></div>{" "}
+        <div id="service1" className="flex gap-3 items-center font-semibold">
+          <div className="w-2 h-2 bg-blue-400 rounded-full"></div>{" "}
           <span>{t("servicesPage.usefulService")}</span>
         </div>
         <div className="bg-white p-4 grid grid-cols-4 gap-4 rounded-lg">
@@ -311,8 +368,11 @@ const Services = () => {
           <img className="w-[77px] h-[97px] object-cover" src={png3} alt="" />
           <img className="w-[77px] h-[97px] object-cover" src={png4} alt="" />
         </div>
-        <div className="flex gap-3 items-center font-semibold pt-4">
-          <div id="service2" className="w-2 h-2 bg-blue-400 rounded-full"></div>{" "}
+        <div
+          id="service2"
+          className="flex gap-3 items-center font-semibold pt-4"
+        >
+          <div className="w-2 h-2 bg-blue-400 rounded-full"></div>{" "}
           <span>{t("servicesPage.simcardService")}</span>
         </div>
         <div className="bg-white p-4 grid grid-cols-4 gap-2 rounded-lg">
@@ -634,7 +694,6 @@ const Services = () => {
                 fill="none"
                 viewBox="0 0 32 32"
                 xmlns="http://www.w3.org/2000/svg"
-                
                 height="24"
                 width="24"
                 preserveAspectRatio="xMidYMid meet"
@@ -693,7 +752,326 @@ const Services = () => {
         <div>
           <img className="rounded-lg" src={png5} alt="" />
         </div>
-        <NavarBotton/>
+        <div
+          id="service3"
+          className="flex gap-3 items-center font-semibold pt-4"
+        >
+          <div id="service1" className="w-2 h-2 bg-blue-400 rounded-full"></div>{" "}
+          <span>{t("servicesPage.convertionService")}</span>
+        </div>
+        <div className="bg-white p-4 grid grid-cols-4  rounded-lg">
+          <div className="flex flex-col gap-4  items-center justify-center">
+            <div className="bg-gray-100 p-2 rounded-lg">
+              <svg
+                fill="none"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                width="24"
+                preserveAspectRatio="xMidYMid meet"
+                focusable="false"
+              >
+                <defs></defs>
+                <g strokeLinecap="round" strokeWidth="1.5">
+                  <g stroke="#ff4f00">
+                    <path d="M10 12a2 2 0 11-4.001 0A2 2 0 0110 12h0z"></path>
+                    <path strokeLinejoin="round" d="M8.5 14h7"></path>
+                    <path d="M18 12a2 2 0 11-4.001 0A2 2 0 0118 12h0z"></path>
+                  </g>
+                  <g stroke="#0095da" strokeLinejoin="round">
+                    <path d="M3 7a4 4 0 014-4h10a4 4 0 014 4v10a4 4 0 01-4 4H7a4 4 0 01-4-4V7z"></path>
+                    <path d="M21 14v3a4 4 0 01-2.132 3.538c-1.065.564-2.248-.17-2.868-1.205v0a1.716 1.716 0 00-1.472-.833H9.472c-.603 0-1.162.316-1.472.833v0c-.62 1.034-1.803 1.769-2.868 1.205A4 4 0 013 17v-3"></path>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <p className="text-[10px]">{t("servicesPage.voiceMail")}</p>
+          </div>
+          <div className="flex flex-col gap-4  items-center justify-center">
+            <div className="bg-gray-100 p-2 rounded-lg">
+              <svg
+                fill="none"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                width="24"
+                preserveAspectRatio="xMidYMid meet"
+                focusable="false"
+              >
+                <defs></defs>
+                <path
+                  stroke="#ff4f00"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                  d="M12.957 13.33l-1.99-2.077a1.262 1.262 0 01-.159-1.543 1.262 1.262 0 00-.109-1.488l-.509-.597c-.57-.669-1.558-.899-2.099-.207-.81 1.038-1.262 3.03 1.916 6.36 3.177 3.328 5.279 2.972 6.428 2.204.754-.504.556-1.538-.149-2.11l-.431-.35a1.157 1.157 0 00-1.396-.047 1.157 1.157 0 01-1.502-.145z"
+                ></path>
+                <g
+                  stroke="#0095da"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                >
+                  <path d="M3 7a4 4 0 014-4h10a4 4 0 014 4v10a4 4 0 01-4 4H7a4 4 0 01-4-4V7z"></path>
+                  <path d="M21 13V6.863c0-1.426-1.723-2.14-2.731-1.132L12.75 11.25"></path>
+                  <path d="M12.5 11.5l5.769-5.769C19.277 4.723 18.563 3 17.137 3H11.5"></path>
+                  <g>
+                    <path d="M3 11v6.137c0 1.426 1.723 2.14 2.731 1.132l5.519-5.519"></path>
+                    <path d="M11.5 12.5l-5.769 5.769C4.723 19.277 5.437 21 6.863 21H12.5M19.5 4.5l-15 15"></path>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <p className="text-[10px]">
+              {t("servicesPage.convertionLimitation")}
+            </p>
+          </div>
+          <div className="flex flex-col gap-4  items-center justify-center px-4 overflow-hidden">
+            <div className="bg-gray-100 p-2 rounded-lg">
+              <svg
+                fill="none"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                width="24"
+                preserveAspectRatio="xMidYMid meet"
+                focusable="false"
+              >
+                <defs></defs>
+                <g stroke="#ff4f00" strokeLinecap="round" strokeWidth="1.5">
+                  <path d="M7 12.002h10.004M12.002 17.004a5.002 5.002 0 100-10.004 5.002 5.002 0 000 10.004z"></path>
+                  <path d="M12.002 17.004c1.105 0 2-2.24 2-5.002 0-2.763-.895-5.002-2-5.002s-2 2.24-2 5.002c0 2.762.895 5.002 2 5.002z"></path>
+                </g>
+                <g
+                  stroke="#0095da"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                >
+                  <path d="M3 7a4 4 0 014-4h10a4 4 0 014 4v10a4 4 0 01-4 4H7a4 4 0 01-4-4V7z"></path>
+                  <path d="M21 13V6.863c0-1.426-1.723-2.14-2.731-1.132L12.75 11.25"></path>
+                  <path d="M12.5 11.5l5.769-5.769C19.277 4.723 18.563 3 17.137 3H11.5"></path>
+                  <g>
+                    <path d="M3 11v6.137c0 1.426 1.723 2.14 2.731 1.132l5.519-5.519"></path>
+                    <path d="M11.5 12.5l-5.769 5.769C4.723 19.277 5.437 21 6.863 21H12.5M19.5 4.5l-15 15"></path>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div className=" overflow-hidden w-30 ">
+              <motion.p
+                initial={{ x: -100 }}
+                animate={{ x: 100 }}
+                transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
+                className=" text-[10px]"
+              >
+                {t("servicesPage.convertionLimitationNatinal")}
+              </motion.p>
+            </div>
+          </div>
+          <div className="flex flex-col gap-4  items-center justify-center">
+            <div className="bg-gray-100 p-2 rounded-lg">
+              <svg
+                fill="none"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                width="24"
+                preserveAspectRatio="xMidYMid meet"
+                focusable="false"
+              >
+                <defs></defs>
+                <path
+                  stroke="#ff4f00"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                  d="M26 17.333v-6.666m3.333 5v-3.334m-6.666 3.334v-3.334"
+                ></path>
+                <path
+                  stroke="#0095da"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                  d="M13.793 23.398L8.98 18.377a2 2 0 01-.161-2.578l1-1.345a2 2 0 00-.082-2.49L7.32 9.123c-.57-.668-1.516-.885-2.208-.344-2.107 1.65-5.378 6.072 2.903 14.748 8.203 8.593 13.048 5.672 14.992 3.614.658-.698.454-1.751-.29-2.356l-2.51-2.035a2 2 0 00-2.403-.089l-1.424.993a2 2 0 01-2.587-.258z"
+                ></path>
+                <path
+                  stroke="#0095da"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                  d="M19.333 12A4.666 4.666 0 1124 7.333m-6.047.953l1.38-.952V5.632"
+                ></path>
+              </svg>
+            </div>
+            <p className="text-[10px]">{t("servicesPage.waitingForSong")}</p>
+          </div>
+          <div className="flex flex-col gap-4  items-center justify-center">
+            <div className="bg-gray-100 p-2 rounded-lg">
+              <svg
+                fill="none"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                width="24"
+                preserveAspectRatio="xMidYMid meet"
+                focusable="false"
+              >
+                <defs></defs>
+                <path
+                  stroke="#0095da"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                  d="M11.333 2.667h-2a4 4 0 00-4 4v16a4 4 0 004 4H10m1.333-24l.667.666h2.667l.666-.667m-4 0h4m0 0h2a4 4 0 014 4V18"
+                ></path>
+                <path
+                  fill="#ff4f00"
+                  fillRule="evenodd"
+                  d="M12.7 20a.7.7 0 00-.7.7v5.6a.7.7 0 00.7.7h2.8a.7.7 0 100-1.4h-2.1v-4.9a.7.7 0 00-.7-.7zm7 1.4H19v4.9a.7.7 0 11-1.4 0v-4.9h-.7a.7.7 0 110-1.4h2.8a.7.7 0 110 1.4zm3.5 0h2.1a.7.7 0 100-1.4h-2.8a.7.7 0 00-.7.7v5.6a.7.7 0 00.7.7h2.8a.7.7 0 100-1.4h-2.1v-1.4h2.1a.7.7 0 100-1.4h-2.1v-1.4z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+            </div>
+            <p className="text-[10px]">{t("servicesPage.VoLTEViLTE")}</p>
+          </div>
+        </div>
+        <div
+          id="service4"
+          className="flex gap-3 items-center font-semibold pt-4"
+        >
+          <div id="service1" className="w-2 h-2 bg-blue-400 rounded-full"></div>{" "}
+          <span>{t("servicesPage.messageService")}</span>
+        </div>
+        <div className="bg-white p-4 grid grid-cols-4  rounded-lg">
+          <div className="flex flex-col gap-4  items-center justify-center">
+            <div className="bg-gray-100 p-2 rounded-lg">
+              <svg
+                fill="none"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                width="24"
+                preserveAspectRatio="xMidYMid meet"
+                focusable="false"
+              >
+                <defs></defs>
+                <g
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                >
+                  <g stroke="#ff4f00">
+                    <path d="M10 16v-2l1.5 1.5L13 14v2M6.5 13l1-.5V16"></path>
+                    <path d="M16.5 17.5v0a2 2 0 002-2V9a3 3 0 00-3-3H7.438C6.368 6 5.5 6.868 5.5 7.938v0"></path>
+                    <path d="M18.5 15v0a2.5 2.5 0 002.5-2.5V8a4.5 4.5 0 00-4.5-4.5H11A2.5 2.5 0 008.5 6v0"></path>
+                  </g>
+                  <g stroke="#0095da">
+                    <path d="M3.772 17.241l-.195.824a1.5 1.5 0 001.842 1.796l.643-.17c.125-.032.253-.05.382-.05H14.5a1.5 1.5 0 001.5-1.5V10a1.5 1.5 0 00-1.5-1.5H5.312a1.5 1.5 0 00-1.5 1.5V16.895c0 .117-.013.233-.04.346z"></path>
+                    <path d="M11.125 19.642H6.25L3 20.499l.813-3.428v-4.286"></path>
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+            <p className="text-[10px]">{t("servicesPage.aLotOfMessage")}</p>
+          </div>
+          <div className="flex flex-col gap-4  items-center justify-center overflow-hidden px-4">
+            <div className="bg-gray-100 p-2 rounded-lg">
+              <svg
+                fill="none"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                width="24"
+                preserveAspectRatio="xMidYMid meet"
+                focusable="false"
+              >
+                <defs></defs>
+                <g strokeLinecap="round" strokeWidth="1.5">
+                  <g stroke="#0095da">
+                    <path d="M3 11.004L19 11M18.963 11.772a8 8 0 10-7.14 7.186"></path>
+                    <path d="M14.2 11c0-4.418-1.433-8-3.2-8-1.767 0-3.2 3.582-3.2 8s1.433 8 3.2 8"></path>
+                  </g>
+                  <g stroke="#ff4f00" strokeLinejoin="round">
+                    <path d="M21 16a5 5 0 11-10 0 5 5 0 0110 0zM19.505 12.826l-6.682 6.683"></path>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div className=" overflow-hidden w-30 ">
+              <motion.p
+                initial={{ x: -100 }}
+                animate={{ x: 100 }}
+                transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
+                className=" text-[10px]"
+              >
+                {t("servicesPage.callsUnsucces")}
+              </motion.p>
+            </div>
+          </div>
+        </div>
+        <div
+          id="service5"
+          className="flex gap-3 items-center font-semibold pt-4"
+        >
+          <div id="service1" className="w-2 h-2 bg-blue-400 rounded-full"></div>{" "}
+          <span>{t("servicesPage.digicalService")}</span>
+        </div>
+        <div className="bg-white p-4 grid grid-cols-4  rounded-lg">
+          <div className="flex flex-col gap-4  items-center justify-center">
+            <div className="bg-gray-100 p-2 rounded-lg">
+              <svg
+                fill="none"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                width="24"
+                preserveAspectRatio="xMidYMid meet"
+                focusable="false"
+              >
+                <defs></defs>
+                <path
+                  stroke="#0095da"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                  d="M19.863 9.226V17.5a2 2 0 01-2 2h-1.931M4.137 9.226V17.5a2 2 0 002 2h1.931m3.932-9c-2.15 0-3.727-1.88-3.206-3.82l.677-2.517c.104-.39.48-.663.912-.663h3.234c.432 0 .808.273.912.663l.677 2.517C15.727 8.62 14.15 10.5 12 10.5zm5.883 0c-.97 0-1.816-.614-2.051-1.49l-1.189-4.423c-.148-.552.301-1.087.913-1.087h1.787c.4 0 .76.236.918.602a371.98 371.98 0 011.602 3.74c.519 1.286-.503 2.658-1.98 2.658zm-11.766 0c-1.477 0-2.499-1.372-1.98-2.658L5.74 4.105A1 1 0 016.66 3.5h1.785c.612 0 1.061.535.913 1.087L8.168 9.01c-.235.876-1.081 1.49-2.051 1.49z"
+                ></path>
+                <g stroke="#ff4f00" strokeLinecap="round" strokeWidth="1.5">
+                  <path d="M8 17.5h8M12 21.5a4 4 0 100-8 4 4 0 000 8z"></path>
+                  <path d="M12 21.5c.884 0 1.6-1.79 1.6-4s-.716-4-1.6-4c-.883 0-1.6 1.79-1.6 4s.716 4 1.6 4z"></path>
+                </g>
+              </svg>
+            </div>
+
+            <p className="text-[10px]">{t("servicesPage.onlineMarket")}</p>
+          </div>
+          <div className="flex flex-col gap-4  items-center justify-center ">
+            <div className="bg-gray-100 p-2 rounded-lg">
+              <svg
+                fill="none"
+                viewBox="0 0 25 25"
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                width="24"
+                preserveAspectRatio="xMidYMid meet"
+                focusable="false"
+              >
+                <defs></defs>
+                <path
+                  fill="#0095da"
+                  d="M20.29 4.482a.75.75 0 10-1.064 1.058 9.75 9.75 0 010 13.792.75.75 0 001.065 1.058 11.25 11.25 0 000-15.908zM2.584 12.44a9.75 9.75 0 012.858-6.893.753.753 0 10-1.065-1.065 11.25 11.25 0 000 15.908.75.75 0 001.065-1.058 9.75 9.75 0 01-2.858-6.892z"
+                ></path>
+                <path
+                  fill="#ff4f00"
+                  d="M17.628 7.137a.75.75 0 10-1.057 1.065 6 6 0 010 8.475.75.75 0 001.057 1.065 7.5 7.5 0 000-10.605zm-9.532 0a.75.75 0 00-1.058 0 7.5 7.5 0 000 10.605.75.75 0 001.058-1.065 6 6 0 010-8.475.75.75 0 000-1.065zm6.615 4.62L10.96 9.59a.75.75 0 00-1.125.652v4.328a.75.75 0 001.125.652l3.75-2.167a.75.75 0 000-1.298zm-3.375 1.5V11.54l1.5.862-1.5.855z"
+                ></path>
+              </svg>
+            </div>
+
+            <p className=" text-[10px]">{t("servicesPage.withCinama")}</p>
+          </div>
+        </div>
+        <NavarBotton />
       </div>
     </div>
   );
