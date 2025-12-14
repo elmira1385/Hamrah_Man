@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import svg from "../image/dark-logo.svg";
 import { useForm } from "react-hook-form";
 import Button2 from "../components/Button2";
 import { useNavigate } from "react-router";
+import { useNumberLogin } from "../store/useNumber";
 
 
 const Login = () => {
+  const {setNumber}=useNumberLogin()
   const { t } = useTranslation();
   const changePage=useNavigate()
   const {
     register,
+    getValues,
     formState: { errors },
   } = useForm({
     mode: "onChange",
@@ -19,6 +22,13 @@ const Login = () => {
       
     },
   });
+
+  useEffect(()=>{
+    const savedPhoneNumber=localStorage.getItem("phoneNumber")
+    if(savedPhoneNumber){
+      changePage("/main")
+    }
+  },[localStorage])
   return (
     <div className="flex flex-col bg-[#0095da] w-full h-full pt-40 ">
       <div className="flex flex-col  bg-white justify-between relative px-5 py-8 rounded-t-2xl h-full">
@@ -61,6 +71,7 @@ const Login = () => {
         <div className="flex flex-col gap-2">
           <button onClick={()=>{
           changePage("/otp")
+           setNumber(getValues("phoneNumber"))
           }} className="bg-[#0095da] py-4 text-white rounded-md">
             {t("loginPage.button1")}
           </button>

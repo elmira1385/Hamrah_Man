@@ -28,14 +28,14 @@ const resources = {
       },
       otpPage: {
         enterOkCode: "کد تائید را وارد کنید",
-        sendACodeToThisNumber: "کد 5 رقمی به شماره‌ی 09109306236 ارسال شد",
+        sendACodeToThisNumber: "کد 5 رقمی به شماره‌ی {{number}} ارسال شد",
         hiPleaseEnterYourPhoneNumber:
           "سلام،لطفا شماره‌ تلفن  همراه خود را وارد کنید.",
         reciveCodeAgian: "دریافت مجدد کد تائید",
         OkGo:"تائید و ادامه"
       },
       mainPage: {
-        number: "09109306236",
+        number: "{{number}}",
         title1: "خدمات",
         title2: "شارژ",
         title3: "قرعه کشی",

@@ -4,9 +4,11 @@ import svg from "../image/dark-logo.svg";
 import { useForm } from "react-hook-form";
 import Button2 from "../components/Button2";
 import { useNavigate } from "react-router";
+import { useNumberLogin } from "../store/useNumber";
 
 const Otp = () => {
   const changePage = useNavigate();
+  const {number}=useNumberLogin()
   const { t } = useTranslation();
   const { register, setFocus,watch } = useForm({
     defaultValues: {
@@ -82,7 +84,7 @@ const Otp = () => {
             </svg>
             <p className="font-semibold">{t("otpPage.enterOkCode")}</p>
             <p className="text-[#1f2937] text-[14px]">
-              {t("otpPage.sendACodeToThisNumber")}
+              {t("otpPage.sendACodeToThisNumber",{number:number})}
             </p>
             <div dir="ltr" className="flex justify-between ">
               <input 

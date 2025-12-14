@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-// import { useNavigate } from "react-router";
 import Chart from "react-apexcharts";
 import png1 from "../image/1.jpg";
 import png2 from "../image/2.jpg";
@@ -20,9 +19,14 @@ import banner3 from "../image/s3.jpg"
 import banner4 from "../image/s4.jpg"
 import banner5 from "../image/s5.jpg"
 import banner6 from "../image/s6.jpg"
+import { useNumberLogin } from "../store/useNumber";
+import { useNavigate } from "react-router";
+
 
 const Main = () => {
   const { t } = useTranslation();
+   const{number}=useNumberLogin()
+   const changePage=useNavigate()
   const options1:ApexCharts.ApexOptions = {
     chart: {
       type: "radialBar",
@@ -117,7 +121,13 @@ const Main = () => {
   const series1 = [0]; // مقدار درصدی که نمایش داده میشه
   const series2 = [30]; // مقدار درصدی که نمایش داده میشه
   const series3 = [50]; // مقدار درصدی که نمایش داده میشه
-
+ 
+   useEffect(() => {
+    const phone = localStorage.getItem("phoneNumber");
+    if (phone === null) {
+      changePage("/");
+    }
+  }, [localStorage]);
   return (
     <div className="p-4 bg-gray-100 h-full flex flex-col gap-4">
       <div className="flex gap-2">
@@ -149,7 +159,7 @@ const Main = () => {
                 <path d="M4 6h16M4 18h16"></path>
               </g>
             </svg>
-            <span className="text-[14px] ">{t("mainPage.number")}</span>
+            <span className="text-[14px] ">{t("mainPage.number",{number:number})}</span>
           </div>
           <div>
             <svg
