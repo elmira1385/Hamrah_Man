@@ -1,63 +1,65 @@
 @import "tailwindcss";
 
 @font-face {
-	font-family: IRANYekanX;
-	font-style: normal;
-	font-weight: 300;
-	src: url('Fonts/Webfonts/woff/IRANYekanX-Light.woff') format('woff'),   
-	url('Fonts/Webfonts/woff2/IRANYekanX-Light.woff2') format('woff2');		 
-}
-
-
-
-@font-face {
-	font-family: IRANYekanX;
-	font-style: normal;
-	font-weight: 900;
-	src: url('Fonts/Webfonts/woff/IRANYekanX-Black.woff') format('woff'),   
-	url('Fonts/Webfonts/woff2/IRANYekanX-Black.woff2') format('woff2');		 
-}
-@font-face {
-	font-family: IRANYekanX;
-	font-style: normal;
-	font-weight: 950;
-	src: url('Fonts/Webfonts/woff/IRANYekanX-ExtraBlack.woff') format('woff'),   
-	url('Fonts/Webfonts/woff2/IRANYekanX-ExtraBlack.woff2') format('woff2');		 
-}
-
-
-
-@font-face {
-	font-family: IRANYekanX;
-	font-style: normal;
-	font-weight: bold;
-	src: url('Fonts/Webfonts/woff/IRANYekanX-Bold.woff') format('woff'),   
-	url('Fonts/Webfonts/woff2/IRANYekanX-Bold.woff2') format('woff2');	 
+  font-family: IRANYekanX;
+  font-style: normal;
+  font-weight: 300;
+  src:
+    url("Fonts/Webfonts/woff/IRANYekanX-Light.woff") format("woff"),
+    url("Fonts/Webfonts/woff2/IRANYekanX-Light.woff2") format("woff2");
 }
 
 @font-face {
-	font-family: IRANYekanX;
-	font-style: normal;
-	font-weight: normal;
-	src: url('Fonts/Webfonts/woff/IRANYekanX-Regular.woff') format('woff'),   
-	url('Fonts/Webfonts/woff2/IRANYekanX-Regular.woff2') format('woff2');	
+  font-family: IRANYekanX;
+  font-style: normal;
+  font-weight: 900;
+  src:
+    url("Fonts/Webfonts/woff/IRANYekanX-Black.woff") format("woff"),
+    url("Fonts/Webfonts/woff2/IRANYekanX-Black.woff2") format("woff2");
+}
+@font-face {
+  font-family: IRANYekanX;
+  font-style: normal;
+  font-weight: 950;
+  src:
+    url("Fonts/Webfonts/woff/IRANYekanX-ExtraBlack.woff") format("woff"),
+    url("Fonts/Webfonts/woff2/IRANYekanX-ExtraBlack.woff2") format("woff2");
 }
 
-body{
-    font-family:IRANYekanX,sans-serif ;
-    height: 100vh;
-    direction: rtl;
-	
+@font-face {
+  font-family: IRANYekanX;
+  font-style: normal;
+  font-weight: bold;
+  src:
+    url("Fonts/Webfonts/woff/IRANYekanX-Bold.woff") format("woff"),
+    url("Fonts/Webfonts/woff2/IRANYekanX-Bold.woff2") format("woff2");
 }
-#root{
-    height: 100%;
+
+@font-face {
+  font-family: IRANYekanX;
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url("Fonts/Webfonts/woff/IRANYekanX-Regular.woff") format("woff"),
+    url("Fonts/Webfonts/woff2/IRANYekanX-Regular.woff2") format("woff2");
 }
-.apexcharts-radialbar-hollow{
-	padding-bottom: 10px;
+
+body {
+  font-family: IRANYekanX, sans-serif;
+  height: 100vh;
+  direction: rtl;
+}
+:root {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+.apexcharts-radialbar-hollow {
+  padding-bottom: 10px;
 }
 
 .ss01 {
-	-moz-font-feature-settings: 'ss01';
-	-webkit-font-feature-settings: 'ss01';
-	font-feature-settings: 'ss01';
+  -moz-font-feature-settings: "ss01";
+  -webkit-font-feature-settings: "ss01";
+  font-feature-settings: "ss01";
 }

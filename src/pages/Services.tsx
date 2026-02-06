@@ -135,7 +135,7 @@ const Services = () => {
         </div>
       </div>
       <div className="flex flex-col bg-gray-100 p-4 gap-4  pb-24">
-        <div id="service1" className="flex gap-3 items-center font-semibold">
+        <div id="service1"  className="flex gap-3 items-center font-semibold scroll-mt-50">
           <div className="w-2 h-2 bg-blue-400 rounded-full"></div>{" "}
           <span>{t("servicesPage.usefulService")}</span>
         </div>
@@ -370,7 +370,7 @@ const Services = () => {
         </div>
         <div
           id="service2"
-          className="flex gap-3 items-center font-semibold pt-4"
+          className="flex gap-3 items-center font-semibold pt-4 scroll-mt-30"
         >
           <div className="w-2 h-2 bg-blue-400 rounded-full"></div>{" "}
           <span>{t("servicesPage.simcardService")}</span>
@@ -754,7 +754,7 @@ const Services = () => {
         </div>
         <div
           id="service3"
-          className="flex gap-3 items-center font-semibold pt-4"
+          className="flex gap-3 items-center font-semibold pt-4 scroll-mt-30"
         >
           <div className="w-2 h-2 bg-blue-400 rounded-full"></div>{" "}
           <span>{t("servicesPage.convertionService")}</span>
@@ -936,7 +936,7 @@ const Services = () => {
         </div>
         <div
           id="service4"
-          className="flex gap-3 items-center font-semibold pt-4"
+          className="flex gap-3 items-center font-semibold pt-4 scroll-mt-30"
         >
           <div className="w-2 h-2 bg-blue-400 rounded-full"></div>{" "}
           <span>{t("servicesPage.messageService")}</span>
@@ -1011,7 +1011,7 @@ const Services = () => {
         </div>
         <div
           id="service5"
-          className="flex gap-3 items-center font-semibold pt-4"
+          className="flex gap-3 items-center font-semibold pt-4 scroll-mt-30"
         >
           <div className="w-2 h-2 bg-blue-400 rounded-full"></div>{" "}
           <span>{t("servicesPage.digicalService")}</span>
@@ -1073,7 +1073,7 @@ const Services = () => {
         </div>
         <div
           id="service6"
-          className="flex gap-3 items-center font-semibold pt-4"
+          className="flex gap-3 items-center font-semibold pt-4 scroll-mt-30"
         >
           <div className="w-2 h-2 bg-blue-400 rounded-full"></div>{" "}
           <span>{t("servicesPage.elseService")}</span>
