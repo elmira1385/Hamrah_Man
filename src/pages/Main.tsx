@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Chart from "react-apexcharts";
 import png1 from "../image/1.jpg";
